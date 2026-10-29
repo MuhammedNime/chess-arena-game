@@ -21,7 +21,7 @@
 (()=>{'use strict';
 const $=id=>document.getElementById(id), glyph={wp:'♙',wn:'♘',wb:'♗',wr:'♖',wq:'♕',wk:'♔',bp:'♟',bn:'♞',bb:'♝',br:'♜',bq:'♛',bk:'♚'};
 let game=new Chess(), flipped=false, selected=null, legal=[], lastMove=null, supabase=null, channel=null, roomId=null, side='w', syncing=false, clocks={w:600,b:600}, timer=null,lastTick=Date.now(), fenMode=false;
-const cfg=()=>({url:localStorage.getItem('cao_url')||'',key:localStorage.getItem('cao_key')||''});
+const cfg=()=>({url:localStorage.getItem('cao_url')||'https://dsbaggupdpharvtffvnm.supabase.co',key:localStorage.getItem('cao_key')||'sb_publishable_S7_M8b-HfXvrEfeiUAZCfA_MisRKMgH'});
 function toast(s){$('toast').textContent=s;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2600)}
 function setNotice(title,body){$('notice').innerHTML='<strong>'+escapeHtml(title)+'</strong><br>'+escapeHtml(body)}
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
